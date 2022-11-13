@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://font/menu_font.tres" type="DynamicFont" id=1]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="DebugTitle" type="Label" parent="."]
+margin_top = -1.0
+margin_right = 65.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 1 )
+text = "Debug"
+
+[node name="PlayerPos" type="Label" parent="."]
+margin_left = 1.0
+margin_top = 24.0
+margin_right = 41.0
+margin_bottom = 49.0
+custom_fonts/font = ExtResource( 1 )
+text = "Pos"
+
+[node name="PlayerVel" type="Label" parent="."]
+margin_top = 49.0
+margin_right = 104.0
+margin_bottom = 74.0
+custom_fonts/font = ExtResource( 1 )
+text = "Velocity"
+
+[node name="PlayerState" type="Label" parent="."]
+margin_left = 1.0
+margin_top = 75.0
+margin_right = 66.0
+margin_bottom = 100.0
+custom_fonts/font = ExtResource( 1 )
+text = "State"

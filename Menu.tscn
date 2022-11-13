@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://font/title_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://font/menu_font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Menu.gd" type="Script" id=3]
+
+[node name="Menu" type="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="StartButton" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -72.0
+margin_top = -216.0
+margin_right = 70.0
+margin_bottom = -185.0
+custom_fonts/font = ExtResource( 2 )
+text = "Start Game"
+
+[node name="HighScore" type="Label" parent="."]
+unique_name_in_owner = true
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -84.5
+margin_right = 84.5
+margin_bottom = 25.0
+custom_fonts/font = ExtResource( 2 )
+text = "High Score: 0"
+
+[node name="Title" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -140.0
+margin_top = -32.5
+margin_right = 140.0
+margin_bottom = 32.5
+custom_fonts/font = ExtResource( 1 )
+text = "TerraRea"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]

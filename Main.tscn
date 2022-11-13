@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://MeleeEnemySpawnZone.tscn" type="PackedScene" id=1]
+[ext_resource path="res://textures/icon.png" type="Texture" id=3]
+[ext_resource path="res://Main.gd" type="Script" id=4]
+[ext_resource path="res://DebugMenu.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Menu.tscn" type="PackedScene" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="GameScene" type="CanvasLayer" parent="."]
+
+[node name="floor" type="StaticBody2D" parent="GameScene"]
+visible = false
+position = Vector2( 525, 543 )
+scale = Vector2( 499.84, 0.359 )
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameScene/floor"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="GameScene/floor"]
+scale = Vector2( 0.119, 1 )
+texture = ExtResource( 3 )
+
+[node name="MeleeEnemySpawnZone" parent="GameScene" instance=ExtResource( 1 )]
+position = Vector2( 809, 439 )
+
+[node name="UI" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="ColorRect" type="ColorRect" parent="UI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
+
+[node name="DebugMenu" parent="UI" instance=ExtResource( 6 )]
+visible = false
+
+[node name="Menu" parent="UI" instance=ExtResource( 7 )]
